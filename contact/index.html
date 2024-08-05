@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="/xmlrpc.php">
+
+    <title>Contact et réservations &#8211; Sopar Restaurant</title>
+    <script type="text/javascript">
+        WebFontConfig = {
+            "google": {"families": ["Merriweather:r,i,b,bi:latin,latin-ext", "Arvo:r:latin,latin-ext"]},
+            "api_url": "https:\/\/fonts-api.wp.com\/css"
+        };
+        (function () {
+            var wf = document.createElement('script');
+            wf.src = 'https://s0.wp.com/wp-content/plugins/custom-fonts/js/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <style
+        id="jetpack-custom-fonts-css">.wf-active body, .wf-active button, .wf-active input, .wf-active select, .wf-active textarea {
+        font-family: "Merriweather", serif
+    }
+
+    .wf-active .hentry div.sd-rating h3.sd-title, .wf-active .hentry div.sharedaddy h3.sd-title {
+        font-family: "Merriweather", serif
+    }
+
+    .wf-active .site-title, .wf-active h1, .wf-active h2:not([class^="gr_custom_header"]), .wf-active h3:not(.sd-title), .wf-active h4, .wf-active h5, .wf-active h6 {
+        font-family: "Arvo", serif;
+        font-weight: 400;
+        font-style: normal
+    }
+
+    .wf-active .entry-title, .wf-active .page-title, .wf-active h1 {
+        font-style: normal;
+        font-weight: 400
+    }
+
+    .wf-active h2:not([class^="gr_custom_header"]) {
+        font-style: normal;
+        font-weight: 400
+    }
+
+    .wf-active .site-title, .wf-active h3:not(.sd-title) {
+        font-style: normal;
+        font-weight: 400
+    }
+
+    .wf-active .comment-reply-title, .wf-active .comments-title, .wf-active .no-comments, .wf-active .widget-title, .wf-active .widgettitle, .wf-active h4 {
+        font-style: normal;
+        font-weight: 400
+    }
+
+    .wf-active .comment-reply-title small, .wf-active h5 {
+        font-style: normal;
+        font-weight: 400
+    }
+
+    .wf-active h6 {
+        font-style: normal;
+        font-weight: 400
+    }
+
+    .wf-active .page-header span {
+        font-style: normal;
+        font-weight: 400
+    }
+
+    .wf-active .no-comments {
+        font-weight: 400;
+        font-style: normal
+    }
+
+    .wf-active .comment-reply-title small {
+        font-weight: 400;
+        font-style: normal
+    }
+
+    .wf-active .project-info .entry-title {
+        font-style: normal;
+        font-weight: 400
+    }
+
+    .wf-active .hentry div#jp-relatedposts h3.jp-relatedposts-headline {
+        font-weight: 400;
+        font-style: normal
+    }
+
+    .wf-active .widget_jetpack_display_posts_widget .jetpack-display-remote-posts h4 {
+        font-style: normal;
+        font-weight: 400
+    }
+
+    .wf-active .widget_jetpack_display_posts_widget .jetpack-display-remote-posts h4 a {
+        font-weight: 400;
+        font-style: normal
+    }</style>
+    <meta name='robots' content='max-image-preview:large'/>
+
+    <!-- Async WordPress.com Remote Login -->
+    <script id="wpcom_remote_login_js">
+        var wpcom_remote_login_extra_auth = '';
+
+        function wpcom_remote_login_remove_dom_node_id(element_id) {
+            var dom_node = document.getElementById(element_id);
+            if (dom_node) {
+                dom_node.parentNode.removeChild(dom_node);
+            }
+        }
+
+        function wpcom_remote_login_remove_dom_node_classes(class_name) {
+            var dom_nodes = document.querySelectorAll('.' + class_name);
+            for (var i = 0; i < dom_nodes.length; i++) {
+                dom_nodes[i].parentNode.removeChild(dom_nodes[i]);
+            }
+        }
+
+        function wpcom_remote_login_final_cleanup() {
+            wpcom_remote_login_remove_dom_node_classes("wpcom_remote_login_msg");
+            wpcom_remote_login_remove_dom_node_id("wpcom_remote_login_key");
+            wpcom_remote_login_remove_dom_node_id("wpcom_remote_login_validate");
+            wpcom_remote_login_remove_dom_node_id("wpcom_remote_login_js");
+            wpcom_remote_login_remove_dom_node_id("wpcom_request_access_iframe");
+            wpcom_remote_login_remove_dom_node_id("wpcom_request_access_styles");
+        }
+
+        // Watch for messages back from the remote login
+        window.addEventListener("message", function (e) {
+            if (e.origin === "https://r-login.wordpress.com") {
+                var data = {};
+                try {
+                    data = JSON.parse(e.data);
+                } catch (e) {
+                    wpcom_remote_login_final_cleanup();
+                    return;
+                }
+
+                if (data.msg === 'LOGIN') {
+                    // Clean up the login check iframe
+                    wpcom_remote_login_remove_dom_node_id("wpcom_remote_login_key");
+
+                    var id_regex = new RegExp(/^[0-9]+$/);
+                    var token_regex = new RegExp(/^.*|.*|.*$/);
+                    if (
+                        token_regex.test(data.token)
+                        && id_regex.test(data.wpcomid)
+                    ) {
+                        // We have everything we need to ask for a login
+                        var script = document.createElement("script");
+                        script.setAttribute("id", "wpcom_remote_login_validate");
+                        script.src = '/remote-login.php?wpcom_remote_login=validate'
+                            + '&wpcomid=' + data.wpcomid
+                            + '&token=' + encodeURIComponent(data.token)
+                            + '&host=' + window.location.protocol
+                            + '//' + window.location.hostname
+                            + '&postid=3'
+                            + '&is_singular=';
+                        document.body.appendChild(script);
+                    }
+
+                    return;
+                }
+
+                // Safari ITP, not logged in, so redirect
+                if (data.msg === 'LOGIN-REDIRECT') {
+                    window.location = 'https://wordpress.com/log-in?redirect_to=' + window.location.href;
+                    return;
+                }
+
+                // Safari ITP, storage access failed, remove the request
+                if (data.msg === 'LOGIN-REMOVE') {
+                    var css_zap = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } @media screen and ( max-width: 782px ) { html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } }';
+                    var style_zap = document.createElement('style');
+                    style_zap.type = 'text/css';
+                    style_zap.appendChild(document.createTextNode(css_zap));
+                    document.body.appendChild(style_zap);
+
+                    var e = document.getElementById('wpcom_request_access_iframe');
+                    e.parentNode.removeChild(e);
+
+                    document.cookie = 'wordpress_com_login_access=denied; path=/; max-age=31536000';
+
+                    return;
+                }
+
+                // Safari ITP
+                if (data.msg === 'REQUEST_ACCESS') {
+                    console.log('request access: safari');
+
+                    // Check ITP iframe enable/disable knob
+                    if (wpcom_remote_login_extra_auth !== 'safari_itp_iframe') {
+                        return;
+                    }
+
+                    // If we are in a "private window" there is no ITP.
+                    var private_window = false;
+                    try {
+                        var opendb = window.openDatabase(null, null, null, null);
+                    } catch (e) {
+                        private_window = true;
+                    }
+
+                    if (private_window) {
+                        console.log('private window');
+                        return;
+                    }
+
+                    var iframe = document.createElement('iframe');
+                    iframe.id = 'wpcom_request_access_iframe';
+                    iframe.setAttribute('scrolling', 'no');
+                    iframe.setAttribute('sandbox', 'allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-top-navigation-by-user-activation');
+                    iframe.src = 'https://r-login.wordpress.com/remote-login.php?wpcom_remote_login=request_access&origin=' + encodeURIComponent(data.origin) + '&wpcomid=' + encodeURIComponent(data.wpcomid);
+
+                    var css = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 46px !important; } * html body { margin-top: 46px !important; } @media screen and ( max-width: 660px ) { html { margin-top: 71px !important; } * html body { margin-top: 71px !important; } #wpcom_request_access_iframe { display: block; height: 71px !important; } } #wpcom_request_access_iframe { border: 0px; height: 46px; position: fixed; top: 0; left: 0; width: 100%; min-width: 100%; z-index: 99999; background: #23282d; } ';
+
+                    var style = document.createElement('style');
+                    style.type = 'text/css';
+                    style.id = 'wpcom_request_access_styles';
+                    style.appendChild(document.createTextNode(css));
+                    document.body.appendChild(style);
+
+                    document.body.appendChild(iframe);
+                }
+
+                if (data.msg === 'DONE') {
+                    wpcom_remote_login_final_cleanup();
+                }
+            }
+        }, false);
+
+        // Inject the remote login iframe after the page has had a chance to load
+        // more critical resources
+        window.addEventListener("DOMContentLoaded", function (e) {
+            var iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.setAttribute("scrolling", "no");
+            iframe.setAttribute("id", "wpcom_remote_login_key");
+            iframe.src = "https://r-login.wordpress.com/remote-login.php"
+                + "?wpcom_remote_login=key"
+                + "&origin=aHR0cHM6Ly9zb3Bhci1yZXN0YXVyYW50LmNvbQ%3D%3D"
+                + "&wpcomid=118529512"
+                + "&time=1675562646";
+            document.body.appendChild(iframe);
+        }, false);
+    </script>
+    <link rel='dns-prefetch' href='//s1.wp.com'/>
+    <link rel='dns-prefetch' href='//s2.wp.com'/>
+    <link rel='dns-prefetch' href='//restaurantlatoussuire.wordpress.com'/>
+    <link rel='dns-prefetch' href='//s0.wp.com'/>
+    <link rel='dns-prefetch' href='//wordpress.com'/>
+    <link href='https://fonts.gstatic.com' crossorigin rel='preconnect'/>
+    <link rel="alternate" type="application/rss+xml" title="Sopar Restaurant &raquo; Flux" href="/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title="Sopar Restaurant &raquo; Flux des commentaires"
+          href="/comments/feed/"/>
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function () {
+                    oldonload();
+                    func();
+                }
+            }
+        }
+
+        /* ]]> */
+    </script>
+    <script type="text/javascript">
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/",
+            "svgExt": ".svg",
+            "source": {"concatemoji": "https:\/\/s1.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1652185836h&ver=6.2-alpha-55134"}
+        };
+        /*! This file is auto-generated */
+        !function (e, a, t) {
+            var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d");
+
+            function s(e, t) {
+                var a = String.fromCharCode,
+                    e = (p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0), i.toDataURL());
+                return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
+            }
+
+            function c(e) {
+                var t = a.createElement("script");
+                t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
+            }
+
+            for (o = Array("flag", "emoji"), t.supports = {
+                everything: !0,
+                everythingExceptFlag: !0
+            }, r = 0; r < o.length; r++) t.supports[o[r]] = function (e) {
+                if (p && p.fillText) switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
+                    case"flag":
+                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]);
+                    case"emoji":
+                        return !s([129777, 127995, 8205, 129778, 127999], [129777, 127995, 8203, 129778, 127999])
+                }
+                return !1
+            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
+            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () {
+                t.DOMReady = !0
+            }, t.supports.everything || (n = function () {
+                t.readyCallback()
+            }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () {
+                "complete" === a.readyState && t.readyCallback()
+            })), (e = t.source || {}).concatemoji ? c(e.concatemoji) : e.wpemoji && e.twemoji && (c(e.twemoji), c(e.wpemoji)))
+        }(window, document, window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 0.07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link crossorigin='anonymous' rel='stylesheet' id='all-css-0-1'
+          href='https://s1.wp.com/_static/??-eJyNkV1OAzEMhC9E1l1RivqAOEt+rODiZKM4YcntSbcqWlpaeIkytmbyOYY5KTvFgrFAqCpx9RQF5mSnoCQQY7tQgxV5gJXt7PG1S4PZ905G+Bifhs0wgqnEDgxP9l0xmaxzAymN8TuIouXqUOAgENCRRsawAK1EYt0wK0avbRsCxb/tvbfWP0y34RfSHoYl6SOyblMtymdyF9j/jsi6UPRya+peAMtahKwqbx1VfiVdbef4v70ekr4e8o5tJuexnB483VXBz/uWZfPGpIwiqp+BajhTdt9reBl3z9vtfr97HA9f+ordwQ==?cssminify=yes'
+          type='text/css' media='all'/>
+    <style id='wp-block-library-inline-css'>
+        .has-text-align-justify {
+            text-align: justify;
+        }
+
+        .wp-block-cover__image-background.has-parallax {
+            background-size: cover;
+        }
+    </style>
+    <style id='global-styles-inline-css'>
+        body {
+            --wp--preset--shadow--natural: 0 .2rem .3rem 0 rgba(0, 0, 0, 0.3), 0 .5rem .6rem 0 rgba(0, 0, 0, 0.4);
+            --wp--preset--shadow--sharp: .5rem .5rem 0 0 rgba(0, 0, 0, 0.4);
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+            --wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+            --wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+            --wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+            --wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+            --wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+            --wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+            --wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+            --wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+            --wp--preset--spacing--20: 0.44rem;
+            --wp--preset--spacing--30: 0.67rem;
+            --wp--preset--spacing--40: 1rem;
+            --wp--preset--spacing--50: 1.5rem;
+            --wp--preset--spacing--60: 2.25rem;
+            --wp--preset--spacing--70: 3.38rem;
+            --wp--preset--spacing--80: 5.06rem;
+        }
+
+        :where(.is-layout-flex) {
+            gap: 0.5em;
+        }
+
+        body .is-layout-flow > .alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        body .is-layout-flow > .alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        body .is-layout-flow > .aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained > .alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        body .is-layout-constrained > .alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        body .is-layout-constrained > .aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+            max-width: var(--wp--style--global--content-size);
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained > .alignwide {
+            max-width: var(--wp--style--global--wide-size);
+        }
+
+        body .is-layout-flex {
+            display: flex;
+        }
+
+        body .is-layout-flex {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        body .is-layout-flex > * {
+            margin: 0;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        .wp-block-pullquote {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+
+        .wp-block-navigation a:where(:not(.wp-element-button)) {
+            color: inherit;
+        }
+    </style>
+    <link crossorigin='anonymous' rel='stylesheet' id='all-css-2-1'
+          href='https://s2.wp.com/_static/??-eJyFT1sOwjAMuxAlgHioH4izbFUogbSp1nYTtycwCQZI8Gc7tpPAkIyTWDAWCNUkrp5iBichqGSYLqgsfyhzVWZAEKWQpvMTjINJZzlh0IZUW5Cupwy5XBn/2yi60WqGpKu/ApNbPYphcU0hiW/EHLmh7le0w5bFK/SPH1/0HjqE/XK7WVlrd+vF+QaBJG7h?cssminify=yes'
+          type='text/css' media='all'/>
+    <link crossorigin='anonymous' rel='stylesheet' id='print-css-3-1'
+          href='https://s2.wp.com/wp-content/mu-plugins/global-print/global-print.css?m=1465851035h&cssminify=yes'
+          type='text/css' media='print'/>
+    <style id='jetpack-global-styles-frontend-style-inline-css'>
+        :root {
+            --font-headings: unset;
+            --font-base: unset;
+            --font-headings-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            --font-base-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+    </style>
+    <link crossorigin='anonymous' rel='stylesheet' id='all-css-6-1'
+          href='https://s0.wp.com/wp-content/themes/h4/global.css?m=1420737423h&cssminify=yes' type='text/css'
+          media='all'/>
+    <script crossorigin='anonymous' type='text/javascript'
+            src='https://s0.wp.com/_static/??-eJyFykEOgyAQheELOVIlsmt6FrVTMwQGHCDq7asJXbjq6iXv/9QWYQ6ckbOySfkwkUMoCWVczg+IP6G1qVF3Jy5DlLAfv0Y8u/LGdEW7FpSjTuuJ/yLwtMiYseKXf3bGGD30+tHZL48zO4Y='></script>
+    <script type='text/javascript'>
+        window.addEventListener('DOMContentLoaded', function () {
+            rltInitialize({"token": null, "iframeOrigins": ["https:\/\/widgets.wp.com"]});
+        });
+    </script>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD"
+          href="https://restaurantlatoussuire.wordpress.com/xmlrpc.php?rsd"/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"/>
+    <meta name="generator" content="WordPress.com"/>
+    <link rel="canonical" href="/contact/"/>
+    <link rel='shortlink' href='https://wp.me/P81kWk-3'/>
+    <link rel="alternate" type="application/json+oembed"
+          href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Fsopar-restaurant.com%2Fcontact%2F&amp;for=wpcom-auto-discovery"/>
+    <link rel="alternate" type="application/xml+oembed"
+          href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Fsopar-restaurant.com%2Fcontact%2F&amp;for=wpcom-auto-discovery"/>
+    <!-- Jetpack Open Graph Tags -->
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Contact et réservations"/>
+    <meta property="og:url" content="https://sopar-restaurant.com/contact/"/>
+    <meta property="og:description" content="Ceci est un petit extrait destiné à la &amp;nbsp;page « Contact »."/>
+    <meta property="article:published_time" content="2016-10-18T10:58:35+00:00"/>
+    <meta property="article:modified_time" content="2020-01-06T21:32:20+00:00"/>
+    <meta property="og:site_name" content="Sopar Restaurant"/>
+    <meta property="og:image"
+          content="https://restaurantlatoussuire.files.wordpress.com/2016/10/boutton-reserver-sopar.png"/>
+    <meta property="og:image:width" content="2756"/>
+    <meta property="og:image:height" content="787"/>
+    <meta property="og:image:alt" content=""/>
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="article:publisher" content="https://www.facebook.com/WordPresscom"/>
+    <meta name="twitter:text:title" content="Contact et réservations"/>
+    <meta name="twitter:image"
+          content="https://restaurantlatoussuire.files.wordpress.com/2016/10/boutton-reserver-sopar.png?w=640"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+
+    <!-- End Jetpack Open Graph Tags -->
+    <link rel="search" type="application/opensearchdescription+xml" href="/osd.xml" title="Sopar Restaurant"/>
+    <link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml"
+          title="WordPress.com"/>
+    <meta name="theme-color" content="#08404e"/>
+    <meta name="application-name" content="Sopar Restaurant"/>
+    <meta name="msapplication-window" content="width=device-width;height=device-height"/>
+    <meta name="msapplication-tooltip"
+          content="Un lieu cosy où cuisine de qualité se conjugue avec accueil convivial!"/>
+    <meta name="msapplication-task"
+          content="name=Souscrire;action-uri=https://sopar-restaurant.com/feed/;icon-uri=https://restaurantlatoussuire.files.wordpress.com/2017/10/cropped-img_0009.jpg?w=16"/>
+    <meta name="msapplication-task"
+          content="name=Inscrivez-vous pour créer un blog gratuitement;action-uri=http://wordpress.com/signup/;icon-uri=https://s1.wp.com/i/favicon.ico"/>
+    <meta name="msapplication-task"
+          content="name=Assistance WordPress.com;action-uri=http://support.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico"/>
+    <meta name="msapplication-task"
+          content="name=Forums WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico"/>
+    <meta name="description" content="Ceci est un petit extrait destiné à la &amp;nbsp;page « Contact »."/>
+    <style type="text/css" id="custom-background-css">
+        body.custom-background {
+            background-color: #08404e;
+        }
+    </style>
+    <style type="text/css" id="custom-colors-css">    .portfolio-wrapper .project-info .entry-title a,
+    .portfolio-wrapper .project-info .entry-title a:focus,
+    .portfolio-wrapper .project-info .entry-title a:hover {
+        color: #fff;
+    }
+
+    .portfolio-wrapper .project-info .entry-meta,
+    .portfolio-wrapper .project-info .entry-meta a,
+    .portfolio-wrapper .project-info .entry-meta a:focus,
+    .portfolio-wrapper .project-info .entry-meta a:hover {
+        color: #a0a0a0;
+    }
+
+    #comments #respond .form-submit input#comment-submit:focus,
+    #comments #respond .form-submit input#comment-submit:hover {
+        color: inherit !important;
+        opacity: 0.75;
+    }
+
+    #infinite-footer,
+    .main-navigation ul ul,
+    .site .tiled-gallery-caption,
+    body {
+        background-color: #08404e;
+    }
+
+    .dropdown-toggle:focus,
+    .dropdown-toggle:hover,
+    .menu-toggle:active,
+    .menu-toggle:focus,
+    div#actionbar .actnbr-notice form input[type="email"]:focus,
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="text"],
+    input[type="url"],
+    ins,
+    mark,
+    textarea {
+        color: #08404e;
+    }
+
+    .dropdown-toggle:focus,
+    .dropdown-toggle:hover,
+    .menu-toggle:active,
+    .menu-toggle:focus,
+    hr,
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="text"],
+    input[type="url"],
+    textarea,
+    #comments .comment #comment-form-share-text-padder,
+    #comments .comment #respond #comment-form-comment,
+    #comments .comment #respond .comment-form-fields div.comment-form-input {
+        background-color: #FFFFFF;
+    }
+
+    .dropdown-toggle:focus,
+    .dropdown-toggle:hover,
+    .menu-toggle:active,
+    .menu-toggle:focus,
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="text"],
+    input[type="url"],
+    textarea,
+    .jetpack-portfolio .image-link,
+    .widget.top_rated ul {
+        border-color: #FFFFFF;
+    }
+
+    #infinite-footer .container,
+    .entry-title a:focus,
+    .entry-title a:hover,
+    .infinite-loader .spinner div,
+    .jetpack-portfolio .image-link,
+    .page-links > span,
+    .page-links a,
+    .page-links a:focus,
+    .page-links a:hover,
+    .portfolio-entry-title a:focus,
+    .portfolio-entry-title a:hover,
+    .site .jetpack-social-navigation a:focus,
+    .site .jetpack-social-navigation a:hover,
+    .site-title a:focus,
+    .site-title a:hover,
+    .widget_calendar tbody a:focus,
+    .widget_calendar tbody a:hover,
+    a,
+    blockquote cite,
+    blockquote small,
+    body,
+    button,
+    input,
+    input[type="button"],
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="reset"],
+    input[type="search"]:focus,
+    input[type="submit"],
+    input[type="text"]:focus,
+    input[type="url"]:focus,
+    select,
+    textarea:focus,
+    #comments #comment-form-share-text-padder,
+    #comments #comment-form-share-text-padder textarea,
+    #comments #respond #comment-form-comment,
+    #comments #respond #comment-form-comment textarea,
+    #comments #respond #comment-form-identity #comment-form-nascar p,
+    #comments #respond #comment-form-load-service p,
+    #comments #respond .comment-form-fields div.comment-form-input,
+    #comments #respond .comment-form-fields div.comment-form-input input,
+    #comments #respond .comment-form-fields p.comment-form-log-out,
+    #comments #respond .comment-form-fields p.comment-form-posting-as,
+    #comments #respond .form-submit,
+    .widget_akismet_widget .a-stats a,
+    .widget_flickr #flickr_badge_uber_wrapper td a:last-child {
+        color: #FFFFFF;
+    }
+
+    code,
+    kbd,
+    pre,
+    tt,
+    var {
+        color: #FFFFFF;
+    }
+
+    ins,
+    mark,
+    .menu-toggle:active:hover,
+    .menu-toggle:focus:hover {
+        background-color: #A0A0A0;
+    }
+
+    button:focus,
+    button:hover,
+    input[type="button"]:focus,
+    input[type="button"]:hover,
+    input[type="reset"]:focus,
+    input[type="reset"]:hover,
+    input[type="submit"]:focus,
+    input[type="submit"]:hover,
+    .jetpack-portfolio.hover:not(.has-post-thumbnail) .project-info,
+    .menu-toggle:active:hover,
+    .menu-toggle:focus:hover {
+        border-color: #A0A0A0;
+    }
+
+    #infinite-footer .blog-credits,
+    #infinite-footer .blog-credits a,
+    #infinite-footer .blog-credits a:hover,
+    #infinite-footer .blog-info a,
+    #infinite-footer .blog-info a:hover,
+    #infinite-handle span button:focus,
+    #infinite-handle span button:hover,
+    .comment-metadata,
+    .comment-metadata a,
+    .comments-area .comment-likes .comment-like-feedback,
+    .entry-footer,
+    .entry-footer a,
+    .entry-meta,
+    .entry-meta a,
+    .hentry div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post-context,
+    .hentry div.sd-rating h3.sd-title,
+    .hentry div.sharedaddy h3.sd-title,
+    .jetpack-portfolio:not(.has-post-thumbnail) .project-info .entry-meta,
+    .jetpack-portfolio:not(.has-post-thumbnail) .project-info .entry-meta a,
+    .page-links > .page-links-title,
+    .page-links a,
+    .pd-rating,
+    .portfolio-entry-meta,
+    .portfolio-entry-meta a,
+    .post-navigation .meta-nav,
+    .site .tiled-gallery-caption,
+    .site-content .contact-form label span,
+    .site-content .jetpack-recipe .jetpack-recipe-meta,
+    .site-description,
+    .site-footer,
+    .site-footer a,
+    .taxonomy-description,
+    .widget_goodreads div[class^="gr_custom_author"],
+    .widget_goodreads div[class^="gr_custom_title"] a:focus,
+    .widget_goodreads div[class^="gr_custom_title"] a:hover,
+    .widget_jetpack_display_posts_widget .jetpack-display-remote-posts p,
+    .widget_recent_entries .post-date,
+    .widget_rss .rss-date,
+    .widget_rss .rssSummary,
+    .widget_rss cite,
+    .wp-caption-text,
+    a:active,
+    a:focus,
+    a:hover,
+    blockquote,
+    button:focus,
+    button:hover,
+    input[type="button"]:focus,
+    input[type="button"]:hover,
+    input[type="reset"]:focus,
+    input[type="reset"]:hover,
+    input[type="submit"]:focus,
+    input[type="submit"]:hover,
+    #comments #comment-form-share-text-padder textarea,
+    #comments #respond #comment-form-comment textarea,
+    #comments #respond .comment-form-service a:focus,
+    #comments #respond .comment-form-service a:hover,
+    #comments #respond form *,
+    #comments #respond p.comment-subscription-form label,
+    .widget.top_rated #top_posts,
+    .widget_akismet_widget .a-stats a:focus,
+    .widget_akismet_widget .a-stats a:hover,
+    .widget_flickr #flickr_badge_uber_wrapper td a:last-child:focus,
+    .widget_flickr #flickr_badge_uber_wrapper td a:last-child:hover,
+    .widget_upcoming_events_widget .event-when {
+        color: #A0A0A0;
+    }
+
+    #comments #respond .comment-form-fields label,
+    #comments #respond .comment-form-fields label span.nopublish,
+    #comments #respond .comment-form-fields label span.required {
+        color: #6D6D6D;
+    }
+
+    :-moz-placeholder {
+        color: #6D6D6D;
+    }
+
+    ::-moz-placeholder {
+        color: #6D6D6D;
+    }
+
+    :-ms-input-placeholder {
+        color: #6D6D6D;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #6D6D6D;
+    }
+
+    ::input-placeholder {
+        color: #6D6D6D;
+    }
+
+    .site .jetpack-social-navigation a {
+        color: #A0A0A0;
+    }
+
+    #infinite-handle:before,
+    .archive:not([class*="jetpack-portfolio"]) .hentry + .hentry:before,
+    .blog .hentry + .hentry:before,
+    .comment-respond:before,
+    .comments-title:before,
+    .infinite-loader:before,
+    .infinite-wrap .hentry:before,
+    .no-comments:before,
+    .page-content .widget:before,
+    .page-header:after,
+    .page-links > span,
+    .page-links a,
+    .search .hentry + .hentry:before,
+    .site .jetpack-social-navigation a,
+    .site-footer:before,
+    .site-main .post-navigation:before,
+    .site-main .posts-navigation:before,
+    .widget-area:before,
+    .widget:not(:first-of-type):before,
+    .widget_calendar tbody a,
+    .widget_wpcom_social_media_icons_widget a,
+    code,
+    div#jp-relatedposts:before,
+    kbd,
+    pre,
+    tt,
+    var {
+        background-color: #202020;
+    }
+
+    blockquote,
+    body .hentry .wpcom-reblog-snapshot .reblogger-note-content blockquote {
+        border-left-color: #202020;
+    }
+
+    .rtl blockquote,
+    .rtl .hentry .wpcom-reblog-snapshot .reblogger-note-content blockquote {
+        border-right-color: #202020;
+    }
+    </style>
+    <link rel="icon" href="https://restaurantlatoussuire.files.wordpress.com/2017/10/cropped-img_0009.jpg?w=32"
+          sizes="32x32"/>
+    <link rel="icon" href="https://restaurantlatoussuire.files.wordpress.com/2017/10/cropped-img_0009.jpg?w=192"
+          sizes="192x192"/>
+    <link rel="apple-touch-icon"
+          href="https://restaurantlatoussuire.files.wordpress.com/2017/10/cropped-img_0009.jpg?w=180"/>
+    <meta name="msapplication-TileImage"
+          content="https://restaurantlatoussuire.files.wordpress.com/2017/10/cropped-img_0009.jpg?w=270"/>
+    <!-- Your Google Analytics Plugin is missing the tracking ID -->
+</head>
+
+<body
+    class="page-template-default page page-id-3 custom-background wp-custom-logo customizer-styles-applied highlander-enabled highlander-dark custom-colors">
+<div id="page" class="hfeed site">
+    <a class="skip-link screen-reader-text" href="#content">Accéder au contenu principal</a>
+
+    <header id="masthead" class="site-header" role="banner">
+        <div class="site-header-wrapper">
+            <div class="site-branding">
+                <a href="/" class="custom-logo-link" rel="home">
+                    <img width="924" height="924"
+                         src="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png"
+                         class="custom-logo" alt="Sopar Restaurant"
+                         decoding="async"
+                         srcset="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=924&amp;h=924 924w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=150&amp;h=150 150w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=300&amp;h=300 300w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=768&amp;h=768 768w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png 950w"
+                         sizes="(max-width: 924px) 100vw, 924px"
+                         data-attachment-id="21"
+                         data-permalink="https://sopar-restaurant.com/capture-decran-2016-10-18-a-13-08-55/"
+                         data-orig-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png"
+                         data-orig-size="950,950" data-comments-opened="1"
+                         data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+                         data-image-title="capture-decran-2016-10-18-a-13-08-55"
+                         data-image-description="" data-image-caption=""
+                         data-medium-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=300"
+                         data-large-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=924"/></a>
+                <p class="site-title"><a href="/" rel="home">Sopar Restaurant</a></p>
+                <p class="site-description">Un lieu cosy où cuisine de qualité se conjugue avec accueil convivial!</p>
+            </div><!-- .site-branding -->
+
+            <button id="menu-toggle" class="menu-toggle">Menu</button>
+            <div id="site-menu" class="site-menu">
+                <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Menu principal">
+                    <div class="menu-menu-1-container">
+                        <ul id="menu-menu-1" class="primary-menu">
+                            <li id="menu-item-40"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-40">
+                                <a href="/">Accueil</a></li>
+                            <li id="menu-item-41"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41"><a
+                                href="/menu/">La carte</a></li>
+                            <li id="menu-item-42"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a
+                                href="/ventes-a-emporter/">Click&amp;Collect</a></li>
+                            <li id="menu-item-43"
+                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3 current_page_item menu-item-43">
+                                <a href="/contact/" aria-current="page">Contact et réservations</a></li>
+                            <li id="menu-item-95"
+                                class="menu-item menu-item-type-post_type menu-item-object-post menu-item-95"><a
+                                href="/2016/12/16/le-sopar-en-images/">En images</a></li>
+                            <li id="menu-item-44"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a
+                                href="/le-projet/">Le projet</a></li>
+                        </ul>
+                    </div>
+                </nav><!-- .main-navigation -->
+            </div><!-- .site-menu -->
+        </div><!-- .site-header-wrapper -->
+
+        <a href="/" rel="home" class="header-image">
+            <img src="https://restaurantlatoussuire.files.wordpress.com/2016/10/cropped-img_0017.jpg" width="1248"
+                 height="431" alt="">
+        </a>
+    </header><!-- #masthead -->
+
+    <div id="content" class="site-content">
+        <div id="primary" class="content-area">
+            <main id="main" class="site-main" role="main">
+
+
+                <article id="post-3" class="post-3 page type-page status-publish hentry">
+                    <header class="entry-header">
+
+                        <h1 class="entry-title">Contact et réservations</h1></header><!-- .entry-header -->
+
+                    <div class="entry-content">
+                        <p>Le restaurant Sopar, situé rive droite à La Toussuire, vous accueille pour la saison
+                            hivernale du samedi 21 Décembre 2019 au samedi 11 Avril 2020 inclus. Fermeture hebdomadaire
+                            mercredi hors vacances scolaires.</p>
+                        <p><a href="https://module.lafourchette.com/fr_FR/module/296357-a4e18" target="_blank"
+                              rel="noopener"><img loading="lazy" data-attachment-id="175"
+                                                  data-permalink="https://sopar-restaurant.com/contact/boutton-reserver-sopar/"
+                                                  data-orig-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/boutton-reserver-sopar.png"
+                                                  data-orig-size="2756,787" data-comments-opened="1"
+                                                  data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+                                                  data-image-title="BOUTTON RESERVER SOPAR" data-image-description=""
+                                                  data-image-caption=""
+                                                  data-medium-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/boutton-reserver-sopar.png?w=300"
+                                                  data-large-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/boutton-reserver-sopar.png?w=924"
+                                                  class="alignnone size-medium wp-image-175"
+                                                  src="https://restaurantlatoussuire.files.wordpress.com/2016/10/boutton-reserver-sopar.png?w=300&#038;h=86"
+                                                  alt="BOUTTON RESERVER SOPAR" width="300" height="86"
+                                                  srcset="https://restaurantlatoussuire.files.wordpress.com/2016/10/boutton-reserver-sopar.png?w=300&amp;h=86 300w, https://restaurantlatoussuire.files.wordpress.com/2016/10/boutton-reserver-sopar.png?w=600&amp;h=172 600w, https://restaurantlatoussuire.files.wordpress.com/2016/10/boutton-reserver-sopar.png?w=150&amp;h=43 150w"
+                                                  sizes="(max-width: 300px) 100vw, 300px"/></a></p>
+                        <h5></h5>
+                        <p>&nbsp;</p>
+                        <p>Pour toute demande, vous pouvez remplir le formulaire ci dessous:</p>
+                        <p>&nbsp;</p>
+                        <div data-test='contact-form' id='contact-form-3'
+                             class='wp-block-jetpack-contact-form-container '>
+                            <form action='https://sopar-restaurant.com/contact/#contact-form-3' method='post'
+                                  class='contact-form commentsblock'>
+                                <script>
+                                    (function () {
+                                        const contact_forms = document.getElementsByClassName('contact-form');
+
+                                        for (const form of contact_forms) {
+                                            form.onsubmit = function () {
+                                                const buttons = form.getElementsByTagName('button');
+
+                                                for (const button of buttons) {
+                                                    button.setAttribute('disabled', true);
+                                                }
+                                            }
+                                        }
+                                    })();
+                                </script>
+                                <div style="" class='grunion-field-wrap grunion-field-name-wrap'>
+                                    <label
+                                        for='g3-nom'
+                                        class='grunion-field-label name'
+                                    >Nom<span>(obligatoire)</span></label>
+                                    <input
+                                        type='text'
+                                        name='g3-nom'
+                                        id='g3-nom'
+                                        value=''
+                                        class='name'
+                                        required aria-required='true'/>
+                                </div>
+
+                                <div style="" class='grunion-field-wrap grunion-field-email-wrap'>
+                                    <label
+                                        for='g3-email'
+                                        class='grunion-field-label email'
+                                    >E-mail<span>(obligatoire)</span></label>
+                                    <input
+                                        type='email'
+                                        name='g3-email'
+                                        id='g3-email'
+                                        value=''
+                                        class='email'
+                                        required aria-required='true'/>
+                                </div>
+
+                                <div style="" class='grunion-field-wrap grunion-field-text-wrap'>
+                                    <label
+                                        for='g3-tlphone'
+                                        class='grunion-field-label text'
+                                    >Téléphone<span>(obligatoire)</span></label>
+                                    <input
+                                        type='text'
+                                        name='g3-tlphone'
+                                        id='g3-tlphone'
+                                        value=''
+                                        class='text'
+                                        required aria-required='true'/>
+                                </div>
+
+                                <div style="" class='grunion-field-wrap grunion-field-textarea-wrap'>
+                                    <label
+                                        for='contact-form-comment-g3-commentaire'
+                                        class='grunion-field-label textarea'
+                                    >Commentaire</label>
+                                    <textarea
+                                        style=''
+                                        name='g3-commentaire'
+                                        id='contact-form-comment-g3-commentaire'
+                                        rows='20' class='textarea'></textarea>
+                                </div>
+                                <p class='contact-submit'>
+                                    <button type='submit' class='pushbutton-wide'>Envoyer</button>
+                                    <input type='hidden' name='contact-form-id' value='3'/>
+                                    <input type='hidden' name='action' value='grunion-contact-form'/>
+                                    <input type='hidden' name='contact-form-hash'
+                                           value='01e1eaa7ebbea0a8a17e3d7401a27124a22ef144'/>
+                                </p>
+                                <p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea"
+                                                                                            cols="45" rows="8"
+                                                                                            maxlength="100"></textarea></label><input
+                                    type="hidden" id="ak_js_1" name="ak_js" value="167"/>
+                                    <script>document.getElementById("ak_js_1").setAttribute("value", (new Date()).getTime());</script>
+                                </p>
+                            </form>
+                        </div>
+                    </div><!-- .entry-content -->
+
+                    <footer class="entry-footer">
+                    </footer><!-- .entry-footer -->
+                </article><!-- #post-## -->
+
+            </main><!-- #main -->
+        </div><!-- #primary -->
+
+        <div id="secondary" class="widget-area" role="complementary">
+            <aside id="widget_contact_info-3" class="widget widget_contact_info"><h2 class="widget-title">Infos
+                pratiques</h2>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1099.588959983064!2d6.265947133288368!3d45.25726074048131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478a3a3f81ef7d1d%3A0xf6bbfb493d81b34a!2sSopar%20Restaurant!5e1!3m2!1svi!2s!4v1722822108649!5m2!1svi!2s"
+                    width="300" height="280" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </aside>
+        </div><!-- #secondary -->
+    </div><!-- #content -->
+
+</div><!-- #page -->
+
+<!--  -->
+<script src='//0.gravatar.com/js/gprofiles.js?ver=202305z' id='grofiles-cards-js'></script>
+<script id='wpgroho-js-extra'>
+    var WPGroHo = {"my_hash": ""};
+</script>
+<script crossorigin='anonymous' type='text/javascript'
+        src='https://s1.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1610363240h'></script>
+
+<script>
+    // Initialize and attach hovercards to all gravatars
+    (function () {
+        function init() {
+            if (typeof Gravatar === 'undefined') {
+                return;
+            }
+
+            if (typeof Gravatar.init !== 'function') {
+                return;
+            }
+
+            Gravatar.profile_cb = function (hash, id) {
+                WPGroHo.syncProfileData(hash, id);
+            };
+
+            Gravatar.my_hash = WPGroHo.my_hash;
+            Gravatar.init('body', '#wp-admin-bar-my-account');
+        }
+
+        if (document.readyState !== 'loading') {
+            init();
+        } else {
+            document.addEventListener('DOMContentLoaded', init);
+        }
+    })();
+</script>
+
+<div style="display:none">
+</div>
+<div id="actionbar" style="display: none;"
+     class="actnbr-pub-orvis actnbr-has-follow">
+    <ul>
+        <li class="actnbr-ellipsis actnbr-hidden">
+            <svg class="gridicon gridicons-ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg"
+                 viewBox="0 0 24 24">
+                <g>
+                    <path
+                        d="M7 12c0 1.104-.896 2-2 2s-2-.896-2-2 .896-2 2-2 2 .896 2 2zm12-2c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-7 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2z"/>
+                </g>
+            </svg>
+            <div class="actnbr-popover tip tip-top-left actnbr-more">
+                <div class="tip-arrow"></div>
+                <div class="tip-inner">
+                    <ul>
+                        <li class="actnbr-sitename">
+                            <a href="">
+                                <img alt=''
+                                     src='https://restaurantlatoussuire.files.wordpress.com/2017/10/cropped-img_0009.jpg?w=50'
+                                     class='avatar avatar-50' height='50' width='50'/> Sopar Restaurant </a>
+                        </li>
+                        <li class="actnbr-folded-customize">
+                            <a href="https://restaurantlatoussuire.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Frestaurantlatoussuire.wordpress.com%2Fcontact%2F">
+                                <svg class="gridicon gridicons-customize" height="20" width="20"
+                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <g>
+                                        <path
+                                            d="M2 6c0-1.505.78-3.08 2-4 0 .845.69 2 2 2 1.657 0 3 1.343 3 3 0 .386-.08.752-.212 1.09.74.594 1.476 1.19 2.19 1.81L8.9 11.98c-.62-.716-1.214-1.454-1.807-2.192C6.753 9.92 6.387 10 6 10c-2.21 0-4-1.79-4-4zm12.152 6.848l1.34-1.34c.607.304 1.283.492 2.008.492 2.485 0 4.5-2.015 4.5-4.5 0-.725-.188-1.4-.493-2.007L18 9l-2-2 3.507-3.507C18.9 3.188 18.225 3 17.5 3 15.015 3 13 5.015 13 7.5c0 .725.188 1.4.493 2.007L3 20l2 2 6.848-6.848c1.885 1.928 3.874 3.753 5.977 5.45l1.425 1.148 1.5-1.5-1.15-1.425c-1.695-2.103-3.52-4.092-5.448-5.977z"/>
+                                    </g>
+                                </svg>
+                                <span>Personnaliser</span>
+                            </a>
+                        </li>
+                        <li class="actnbr-signup"><a href="https://wordpress.com/start/">S’inscrire</a></li>
+                        <li class="actnbr-login"><a
+                            href="https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fr-login.wordpress.com%2Fremote-login.php%3Faction%3Dlink%26back%3Dhttps%253A%252F%252Fsopar-restaurant.com%252Fcontact%252F">Connexion</a>
+                        </li>
+                        <li class="actnbr-shortlink"><a href="https://wp.me/P81kWk-3">Copier shortlink</a></li>
+                        <li class="flb-report"><a href="http://en.wordpress.com/abuse/">Signaler ce contenu</a></li>
+                        <li class="actnbr-subs">
+                            <a href="https://subscribe.wordpress.com/">Gérer les abonnements</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script>
+    window.addEventListener("load", function (event) {
+        var link = document.createElement("link");
+        link.href = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.css?v=20210915";
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        document.head.appendChild(link);
+
+        var script = document.createElement("script");
+        script.src = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.js?v=20220329";
+        script.defer = true;
+        document.body.appendChild(script);
+    });
+</script>
+
+<div id="jp-carousel-loading-overlay">
+    <div id="jp-carousel-loading-wrapper">
+        <span id="jp-carousel-library-loading">&nbsp;</span>
+    </div>
+</div>
+<div class="jp-carousel-overlay" style="display: none;">
+
+    <div class="jp-carousel-container">
+        <!-- The Carousel Swiper -->
+        <div
+            class="jp-carousel-wrap swiper-container jp-carousel-swiper-container jp-carousel-transitions"
+            itemscope
+            itemtype="https://schema.org/ImageGallery">
+            <div class="jp-carousel swiper-wrapper"></div>
+            <div class="jp-swiper-button-prev swiper-button-prev">
+                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="maskPrev" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="9" height="12">
+                        <path d="M16.2072 16.59L11.6496 12L16.2072 7.41L14.8041 6L8.8335 12L14.8041 18L16.2072 16.59Z"
+                              fill="white"/>
+                    </mask>
+                    <g mask="url(#maskPrev)">
+                        <rect x="0.579102" width="23.8823" height="24" fill="#FFFFFF"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="jp-swiper-button-next swiper-button-next">
+                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="maskNext" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="8" height="12">
+                        <path d="M8.59814 16.59L13.1557 12L8.59814 7.41L10.0012 6L15.9718 12L10.0012 18L8.59814 16.59Z"
+                              fill="white"/>
+                    </mask>
+                    <g mask="url(#maskNext)">
+                        <rect x="0.34375" width="23.8822" height="24" fill="#FFFFFF"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <!-- The main close buton -->
+        <div class="jp-carousel-close-hint">
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <mask id="maskClose" mask-type="alpha" maskUnits="userSpaceOnUse" x="5" y="5" width="15" height="14">
+                    <path
+                        d="M19.3166 6.41L17.9135 5L12.3509 10.59L6.78834 5L5.38525 6.41L10.9478 12L5.38525 17.59L6.78834 19L12.3509 13.41L17.9135 19L19.3166 17.59L13.754 12L19.3166 6.41Z"
+                        fill="white"/>
+                </mask>
+                <g mask="url(#maskClose)">
+                    <rect x="0.409668" width="23.8823" height="24" fill="#FFFFFF"/>
+                </g>
+            </svg>
+        </div>
+        <!-- Image info, comments and meta -->
+        <div class="jp-carousel-info">
+            <div class="jp-carousel-info-footer">
+                <div class="jp-carousel-pagination-container">
+                    <div class="jp-swiper-pagination swiper-pagination"></div>
+                    <div class="jp-carousel-pagination"></div>
+                </div>
+                <div class="jp-carousel-photo-title-container">
+                    <h2 class="jp-carousel-photo-caption"></h2>
+                </div>
+                <div class="jp-carousel-photo-icons-container">
+                    <a href="#" class="jp-carousel-icon-btn jp-carousel-icon-info"
+                       aria-label="Activer la visibilité des métadonnées sur les photos">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskInfo" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2"
+                                          width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M12.7537 2C7.26076 2 2.80273 6.48 2.80273 12C2.80273 17.52 7.26076 22 12.7537 22C18.2466 22 22.7046 17.52 22.7046 12C22.7046 6.48 18.2466 2 12.7537 2ZM11.7586 7V9H13.7488V7H11.7586ZM11.7586 11V17H13.7488V11H11.7586ZM4.79292 12C4.79292 16.41 8.36531 20 12.7537 20C17.142 20 20.7144 16.41 20.7144 12C20.7144 7.59 17.142 4 12.7537 4C8.36531 4 4.79292 7.59 4.79292 12Z"
+                                              fill="white"/>
+									</mask>
+									<g mask="url(#maskInfo)">
+										<rect x="0.8125" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+							</span>
+                    </a>
+                    <a href="#" class="jp-carousel-icon-btn jp-carousel-icon-comments"
+                       aria-label="Activer la visibilité des commentaires sur les photos">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskComments" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2"
+                                          width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M4.3271 2H20.2486C21.3432 2 22.2388 2.9 22.2388 4V16C22.2388 17.1 21.3432 18 20.2486 18H6.31729L2.33691 22V4C2.33691 2.9 3.2325 2 4.3271 2ZM6.31729 16H20.2486V4H4.3271V18L6.31729 16Z"
+                                              fill="white"/>
+									</mask>
+									<g mask="url(#maskComments)">
+										<rect x="0.34668" width="23.8823" height="24" fill="#FFFFFF"/>
+									</g>
+								</svg>
+
+								<span class="jp-carousel-has-comments-indicator"
+                                      aria-label="Cette image comporte des commentaires."></span>
+							</span>
+                    </a>
+                </div>
+            </div>
+            <div class="jp-carousel-info-extra">
+                <div class="jp-carousel-info-content-wrapper">
+                    <div class="jp-carousel-photo-title-container">
+                        <h2 class="jp-carousel-photo-title"></h2>
+                    </div>
+                    <div class="jp-carousel-comments-wrapper">
+                        <div id="jp-carousel-comments-loading">
+                            <span>Chargement des commentaires&hellip;</span>
+                        </div>
+                        <div class="jp-carousel-comments"></div>
+                        <div id="jp-carousel-comment-form-container">
+                            <span id="jp-carousel-comment-form-spinner">&nbsp;</span>
+                            <div id="jp-carousel-comment-post-results"></div>
+                            <form id="jp-carousel-comment-form">
+                                <label for="jp-carousel-comment-form-comment-field" class="screen-reader-text">Écrire un
+                                    commentaire...</label>
+                                <textarea
+                                    name="comment"
+                                    class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea"
+                                    id="jp-carousel-comment-form-comment-field"
+                                    placeholder="Écrire un commentaire..."
+                                ></textarea>
+                                <div id="jp-carousel-comment-form-submit-and-info-wrapper">
+                                    <div id="jp-carousel-comment-form-commenting-as">
+                                        <fieldset>
+                                            <label for="jp-carousel-comment-form-email-field">E-mail (requis)</label>
+                                            <input type="text" name="email"
+                                                   class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field"
+                                                   id="jp-carousel-comment-form-email-field"/>
+                                        </fieldset>
+                                        <fieldset>
+                                            <label for="jp-carousel-comment-form-author-field">Nom (requis)</label>
+                                            <input type="text" name="author"
+                                                   class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field"
+                                                   id="jp-carousel-comment-form-author-field"/>
+                                        </fieldset>
+                                        <fieldset>
+                                            <label for="jp-carousel-comment-form-url-field">Site web</label>
+                                            <input type="text" name="url"
+                                                   class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field"
+                                                   id="jp-carousel-comment-form-url-field"/>
+                                        </fieldset>
+                                    </div>
+                                    <input
+                                        type="submit"
+                                        name="submit"
+                                        class="jp-carousel-comment-form-button"
+                                        id="jp-carousel-comment-form-button-submit"
+                                        value="Laisser un commentaire"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="jp-carousel-image-meta">
+                        <div class="jp-carousel-title-and-caption">
+                            <div class="jp-carousel-photo-info">
+                                <h3 class="jp-carousel-caption" itemprop="caption description"></h3>
+                            </div>
+
+                            <div class="jp-carousel-photo-description"></div>
+                        </div>
+                        <ul class="jp-carousel-image-exif" style="display: none;"></ul>
+                        <a class="jp-carousel-image-download" target="_blank" style="display: none;">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="19"
+                                      height="18">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M5.84615 5V19H19.7775V12H21.7677V19C21.7677 20.1 20.8721 21 19.7775 21H5.84615C4.74159 21 3.85596 20.1 3.85596 19V5C3.85596 3.9 4.74159 3 5.84615 3H12.8118V5H5.84615ZM14.802 5V3H21.7677V10H19.7775V6.41L9.99569 16.24L8.59261 14.83L18.3744 5H14.802Z"
+                                          fill="white"/>
+                                </mask>
+                                <g mask="url(#mask0)">
+                                    <rect x="0.870605" width="23.8823" height="24" fill="#FFFFFF"/>
+                                </g>
+                            </svg>
+                            <span class="jp-carousel-download-text"></span>
+                        </a>
+                        <div class="jp-carousel-image-map" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<link crossorigin='anonymous' rel='stylesheet' id='all-css-0-2'
+      href='https://s0.wp.com/_static/??-eJylzU0OAiEMBeALidVJ/JmF8SwMdAgjFEJLuL6YODGu2fU1r1+hZWUSCZJArCqH6jwxbChZm9c3Qy7JViM+EcQ+BWQwuqTKGICbz1jUUskGPBrmAwybe3VfDLL9SBtRayoRugSuVOqFMbV561B+uqc1/QUVdf68eMbH+Xq7TKdpvs/bGywWjK0=?cssminify=yes'
+      type='text/css' media='all'/>
+<script id='comment-like-js-extra'>
+    var comment_like_text = {
+        "loading": "chargement\u2026",
+        "swipeUrl": "https:\/\/s2.wp.com\/wp-content\/mu-plugins\/comment-likes\/js\/lib\/swipe.js?ver=20131008"
+    };
+</script>
+<script id='orvis-script-js-extra'>
+    var screenReaderText = {"expand": "ouvrir le sous-menu", "collapse": "fermer le sous-menu"};
+</script>
+<script crossorigin='anonymous' type='text/javascript'
+        src='https://s0.wp.com/_static/??-eJx9UO1OwzAMfCFcMxVt/EE8CkqTFNzESZSPjb39vLKhqoP+in2+8zmHpwQ6hmpDRW6QfPukUHCyNSntbj2mHE3TlWJAlsrbgleR0hXGmBmngtcXSj3LrJvKEy72ytTYI2mbvtejhaWOzAKBJyfrpxWwFtYvy0JLbcCYjzQLiqMk7ODkKN0KjPTg95dsbGH+2oPH4jhlmAIMKiOrUm2WCmqWhLZE/4f4QUHj0Mgb1CrHVqz/Zd+BThy3LnJU2Fbou+efdXdgzDPZbEV9s4BTkpBXreje+W23P/Qvh37/upsuGoHNVA=='></script>
+<script type="text/javascript">
+    // <![CDATA[
+    (function () {
+        try {
+            if (window.external && 'msIsSiteMode' in window.external) {
+                if (window.external.msIsSiteMode()) {
+                    var jl = document.createElement('script');
+                    jl.type = 'text/javascript';
+                    jl.async = true;
+                    jl.src = '/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(jl, s);
+                }
+            }
+        } catch (e) {
+        }
+    })();
+    // ]]>
+</script>
+<script src="//stats.wp.com/w.js?63" defer></script>
+<script type="text/javascript">
+    _tkq = window._tkq || [];
+    _stq = window._stq || [];
+    _tkq.push(['storeContext', {
+        'blog_id': '118529512',
+        'blog_tz': '1',
+        'user_lang': 'fr',
+        'blog_lang': 'fr',
+        'user_id': '0'
+    }]);
+    _stq.push(['view', {
+        'blog': '118529512',
+        'v': 'wpcom',
+        'tz': '1',
+        'user_id': '0',
+        'post': '3',
+        'subd': 'restaurantlatoussuire'
+    }]);
+    _stq.push(['extra', {'crypt': 'UE40eW5QN0p8M2Y/RE1mNzc2NTVTamdsd0xoLz9RQkM2K298TXY9bERQMXc2MjhEaVZfb2wwakRoSj0mUkp1THptM1NdbkV1WjZIcU9mVWQmPUIvMlN6Jk8wW3NYVEJ3dWZOWExuWD82TkpfZ2xyd2xkZGtSJnEsMSY4Rnc4UlN8WWViTXNiWTF+ZFpbcWpFX0dkRGVIRFk9VU5qSmNpXWVIRHN+PUk9QXl8RVhqTXdhLnJSME9OK3lbfDksRmtXTD9DLF1qL0RLYjNuQzZ5UVlGclY5cFl8OVImWUN4fmY3R110MT8wSnEmWzVUYzhuVTBGK2NKU2I0L08vJVZIaDBVZ3pXW0xFOGs9bj9wbC9qUXFUTkkmSkxQMDJWenFSUHEvcUx8Yko='}]);
+    _stq.push(['clickTrackerInit', '118529512', '3']);
+</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript"
+               style="height:1px;width:1px;overflow:hidden;position:absolute;bottom:1px;" alt=""/></noscript>
+<script>
+    if ('object' === typeof wpcom_mobile_user_agent_info) {
+
+        wpcom_mobile_user_agent_info.init();
+        var mobileStatsQueryString = "";
+
+        if (false !== wpcom_mobile_user_agent_info.matchedPlatformName)
+            mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+
+        if (false !== wpcom_mobile_user_agent_info.matchedUserAgentName)
+            mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+
+        if (wpcom_mobile_user_agent_info.isIPad())
+            mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+        if ("" != mobileStatsQueryString) {
+            new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+        }
+
+    }
+</script>
+</body>
+</html>
