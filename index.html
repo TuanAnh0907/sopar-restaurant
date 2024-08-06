@@ -1108,6 +1108,48 @@
     <meta name="msapplication-TileImage"
           content="https://restaurantlatoussuire.files.wordpress.com/2017/10/cropped-img_0009.jpg?w=270"/>
     <!-- Your Google Analytics Plugin is missing the tracking ID -->
+
+    <style type="text/css">
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            margin: 0;
+            width: 200px;
+            cursor: pointer;
+        }
+
+        .dropdown > a {
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .dropdown-content li {
+            display: block;
+            text-align: center;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            color: white;
+        }
+
+        .dropdown-content a:hover {
+            color: #ddaa44;
+        }
+    </style>
 </head>
 
 <body
@@ -1118,24 +1160,25 @@
     <header id="masthead" class="site-header" role="banner">
         <div class="site-header-wrapper">
             <div class="site-branding">
-                <a href="/" class="custom-logo-link" rel="home" aria-current="page"><img width="924" height="924"
-                                                                                         src="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png"
-                                                                                         class="custom-logo"
-                                                                                         alt="Sopar Restaurant"
-                                                                                         decoding="async"
-                                                                                         srcset="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=924&amp;h=924 924w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=150&amp;h=150 150w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=300&amp;h=300 300w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=768&amp;h=768 768w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png 950w"
-                                                                                         sizes="(max-width: 924px) 100vw, 924px"
-                                                                                         data-attachment-id="21"
-                                                                                         data-permalink="https://sopar-restaurant.com/capture-decran-2016-10-18-a-13-08-55/"
-                                                                                         data-orig-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png"
-                                                                                         data-orig-size="950,950"
-                                                                                         data-comments-opened="1"
-                                                                                         data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
-                                                                                         data-image-title="capture-decran-2016-10-18-a-13-08-55"
-                                                                                         data-image-description=""
-                                                                                         data-image-caption=""
-                                                                                         data-medium-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=300"
-                                                                                         data-large-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=924"/></a>
+                <a href="/" class="custom-logo-link" rel="home" aria-current="page">
+                    <img width="924" height="924"
+                         src="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png"
+                         class="custom-logo"
+                         alt="Sopar Restaurant"
+                         decoding="async"
+                         srcset="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=924&amp;h=924 924w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=150&amp;h=150 150w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=300&amp;h=300 300w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=768&amp;h=768 768w, https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png 950w"
+                         sizes="(max-width: 924px) 100vw, 924px"
+                         data-attachment-id="21"
+                         data-permalink="https://sopar-restaurant.com/capture-decran-2016-10-18-a-13-08-55/"
+                         data-orig-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png"
+                         data-orig-size="950,950"
+                         data-comments-opened="1"
+                         data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}"
+                         data-image-title="capture-decran-2016-10-18-a-13-08-55"
+                         data-image-description=""
+                         data-image-caption=""
+                         data-medium-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=300"
+                         data-large-file="https://restaurantlatoussuire.files.wordpress.com/2016/10/capture-d_c3a9cran-2016-10-18-c3a0-13-08-55.png?w=924"/></a>
                 <p class="site-title"><a href="/" rel="home">Sopar Restaurant</a></p>
                 <p class="site-description">Un lieu cosy où cuisine de qualité se conjugue avec accueil convivial!</p>
             </div><!-- .site-branding -->
@@ -1163,6 +1206,14 @@
                             <li id="menu-item-44"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a
                                 href="/le-projet/">Le projet</a></li>
+                            <li id="menu-item-46"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44 dropdown">
+                                <a href="#">ville</a>
+                                <ul class="dropdown-content">
+                                    <li><a>Ha Noi</a></li>
+                                    <li><a>TP.Ho Chi Minh</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </nav><!-- .main-navigation -->
@@ -1190,29 +1241,61 @@
                             ultime est de satisfaire leurs clients sans trahir leurs valeurs. Deux professionnels de l&rsquo;hôtellerie
                             restauration qui, dans ce concept, ont voulu allier leurs deux approches du métier.</p>
                         <p> </p>
-                        <!--                        <p><code></code></p>-->
-                        <!--                        <div id="TA_cdsratingsonlynarrow117" class="TA_cdsratingsonlynarrow">-->
-                        <!--                            <ul id="8gfSRn6" class="TA_links dNrgud">-->
-                        <!--                                <li id="CyPDoWC" class="jFDvaK4Cw9">-->
-                        <!--                                    <a target="_blank" href="https://www.tripadvisor.fr/"><img-->
-                        <!--                                        src="https://www.tripadvisor.fr/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png"-->
-                        <!--                                        alt="TripAdvisor"/></a>-->
-                        <!--                                </li>-->
-                        <!--                            </ul>-->
-                        <!--                        </div>-->
-                        <!--                        <p><a-->
-                        <!--                            href="https://www.jscache.com/wejs?wtype=cdsratingsonlynarrow&#038;uniq=117&#038;locationId=12027926&#038;lang=fr&#038;border=true&#038;shadow=true&#038;backgroundColor=white&#038;display_version=2">https://www.jscache.com/wejs?wtype=cdsratingsonlynarrow&#038;uniq=117&#038;locationId=12027926&#038;lang=fr&#038;border=true&#038;shadow=true&#038;backgroundColor=white&#038;display_version=2</a>-->
-                        <!--                        </p>-->
                     </div><!-- .entry-content -->
+
+
+                    <section style="margin-top:20px; border-radius: 15px;">
+                        <h2 style="color: #2E8B57; font-weight: bolder; font-size: 35px">Bài viết mới nhất</h2>
+                        <ul class="list-articles" style="list-style: none; padding: 0;">
+                            <li class="article-item">
+                                <a href="https://amthucbinhxuyen.com/post/tong-hop-16-quan-nhau-tai-phuong-4-quan-10.p664">
+                                    Tổng hợp 16 quán nhậu tại Phường 4 Quận 10
+                                </a>
+                            </li>
+                            <li class="article-item">
+                                <a href="https://amthucbinhxuyen.com/post/tong-hop-11-quan-tra-sua-tai-phuong-4-quan-10.p663">
+                                    Tổng hợp 11 quán trà sữa tại Phường 4 Quận 10
+                                </a>
+                            </li>
+                            <li class="article-item">
+                                <a href="https://amthucbinhxuyen.com/post/top-17-quan-cafe-tai-phuong-15-quan-4.p662">
+                                    Top 17 quán cafe tại Phường 15 Quận 4
+                                </a>
+                            </li>
+                            <li class="article-item">
+                                <a href="https://amthucbinhxuyen.com/post/top-11-quan-nhau-tai-phuong-8-quan-11.p661">
+                                    Top 11 quán nhậu tại Phường 8 Quận 11
+                                </a>
+                            </li>
+                            <li class="article-item">
+                                <a href="https://amthucbinhxuyen.com/post/danh-sach-10-quan-an-sang-tai-phuong-5-quan-6.p660">
+                                    Danh sách 10 quán ăn sáng tại Phường 5 Quận 6
+                                </a>
+                            </li>
+                            <li class="article-item">
+                                <a href="https://amthucbinhxuyen.com/post/danh-sach-13-quan-nhau-tai-phuong-5-quan-6.p659">
+                                    Danh sách 13 quán nhậu tại Phường 5 Quận 6
+                                </a>
+                            </li>
+                            <li class="article-item">
+                                <a href="https://amthucbinhxuyen.com/post/danh-sach-14-quan-nhau-tai-phuong-6-quan-6.p658">
+                                    Danh sách 14 quán nhậu tại Phường 6 Quận 6
+                                </a>
+                            </li>
+                            <li class="article-item">
+                                <a href="https://amthucbinhxuyen.com/post/top-15-quan-cafe-tai-phuong-5-quan-6.p657">
+                                    Top 15 quán cafe tại Phường 5 Quận 6
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
 
                     <footer class="entry-footer">
                     </footer><!-- .entry-footer -->
                 </article><!-- #post-## -->
 
-
             </main><!-- #main -->
         </div><!-- #primary -->
-
 
         <div id="secondary" class="widget-area" role="complementary">
             <aside id="media_image-3" class="widget widget_media_image">
